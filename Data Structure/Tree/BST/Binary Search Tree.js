@@ -73,6 +73,22 @@ class BST {
     }
     return data;
   }
+
+  DFSPreOrder() {
+    let data = [];
+    let current = this.root;
+
+    function traverse (node) {
+      data.push(node);
+
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
+
+    }
+
+    traverse(current)
+    return data
+  }
 }
 
 let tree = new BST();
@@ -82,4 +98,6 @@ tree.insert(20)
 tree.insert(15)
 //console.log(tree.find(11))
 
-console.log(tree.BFS());
+//console.log(tree.BFS());
+
+console.log(tree.DFSPreOrder())
