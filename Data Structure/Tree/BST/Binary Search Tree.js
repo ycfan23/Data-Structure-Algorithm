@@ -89,6 +89,21 @@ class BST {
     traverse(current)
     return data
   }
+
+  DFSPostOrder() {
+    let data = [];
+    let current = this.root;
+
+    function traverse(node) {
+      if(node.left) traverse(node.left)
+      if(node.right) traverse(node.right)
+
+      data.push(node)
+    }
+
+    traverse(current)
+    return data;
+  }
 }
 
 let tree = new BST();
