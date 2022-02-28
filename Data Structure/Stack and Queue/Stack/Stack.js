@@ -27,6 +27,7 @@ class Stack {
     if (!this.top) return undefined;
     let data = this.top.value;
     this.top = this.top.next;
+    this.size -= 1;
     return data;
   }
 }
