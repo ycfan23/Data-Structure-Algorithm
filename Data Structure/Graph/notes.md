@@ -11,3 +11,4 @@
 ### Storage
 * List or Matrix
 * Matrix: takes more space but faster lookup for edges
+* List: takes less space and it has more real-world application i.e. social network in which the graph data is sparse and not many connections
