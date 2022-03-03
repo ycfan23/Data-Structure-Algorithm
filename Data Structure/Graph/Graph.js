@@ -44,4 +44,27 @@ class Graph {
 
     return data;
   }
+
+  BFS(start) {
+    let queue = [start];
+    let data = [];
+    let visited = {};
+    visited[start] = true;
+
+    let current;
+
+    while (queue.length) {
+      current = queue.shift();
+      data.push(current)
+
+      this.adjacencyList[current].forEach(neighbor => {
+        if(!visited[neighbor]) {
+          visited[neighbor] = true
+          queue.push(neighbor)
+        }
+      })
+    }
+
+    return data;
+  }
 }
