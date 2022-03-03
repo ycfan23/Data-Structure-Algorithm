@@ -24,4 +24,24 @@ class Graph {
     }
     delete this.adjacencyList[vertex]
   }
+
+  DFS(start) {
+    let data = [];
+    let visited = {};
+    let adjacencyList = this.adjacencyList;
+
+    (function traverse(vertex) {
+      if (!vertex) return null;
+
+      data.push(vertex);
+      visited[vertex] = true;
+      adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          return traverse(neighbor)
+        }
+      })
+    })(start)
+
+    return data;
+  }
 }
