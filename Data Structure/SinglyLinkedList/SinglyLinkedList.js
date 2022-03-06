@@ -51,11 +51,24 @@ class SinglyLinkedList {
     this.size += 1;
   }
 
-  unshift() {
+  shift() {
     if(!this.head) return undefined;
 
     let current = this.head;
     this.head = current.next;
     this.size -= 1;
+  }
+
+  get(index) {
+    if(index < 0 || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+
+    while(counter !== index) {
+      current = current.next;
+      counter++
+    }
+    return current
   }
 }
