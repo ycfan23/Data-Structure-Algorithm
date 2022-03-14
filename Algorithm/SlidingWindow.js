@@ -15,3 +15,5 @@ function maxSubArrSum(arr, num) {
 
   return maxSum;
 }
+
+console.log(maxSubArrSum([1,4,12,20,2,1,3], 3))
