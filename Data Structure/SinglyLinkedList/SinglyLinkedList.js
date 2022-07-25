@@ -50,11 +50,38 @@ class SinglyLinkedList {
     this.length--;
   }
 
+  indexOf(value) {
+    let currentNode = this.head;
+    let index = -1;
+
+    while (currentNode) {
+      index++;
+      if(currentNode.value === value) {
+        return index;
+      } else {
+        currentNode = currentNode.next
+      }
+    }
+    return -1;
+  }
+
+  elementAt(index) {
+    let currentNode = this.head;
+    let count = 0;
+
+    while (count < index) {
+      count++;
+      currentNode = currentNode.next;
+    }
+    return currentNode.value
+  }
+
 }
 
 let newList = new SinglyLinkedList();
-newList.add(5)
-newList.add(5)
-newList.add(5)
-
+newList.add(1)
+newList.add(2)
+newList.add(3)
+//newList.remove(5)
 console.log(newList)
+console.log(newList.elementAt(0))
