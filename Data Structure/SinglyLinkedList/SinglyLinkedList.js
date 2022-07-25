@@ -31,6 +31,25 @@ class SinglyLinkedList {
       //find the last node and set it to new node
   }
 
+  remove(value) {
+    let currentNode = this.head;
+    let prevNode;
+    if(!this.head) return undefined;
+    if(currentNode.value === value) {
+      this.head = currentNode.next;
+    } else {
+
+      while (currentNode.value !== value) {
+      prevNode = currentNode;
+      currentNode = currentNode.next
+      }
+
+      prevNode.next = currentNode.next
+
+    }
+    this.length--;
+  }
+
 }
 
 let newList = new SinglyLinkedList();
