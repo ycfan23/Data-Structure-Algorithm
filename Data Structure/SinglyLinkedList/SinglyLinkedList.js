@@ -76,6 +76,50 @@ class SinglyLinkedList {
     return currentNode.value
   }
 
+  addAt(index, value) {
+    let newNode = new Node (value);
+    let currentNode = this.head;
+    let prevNode;
+    let currentIndex = 0;
+
+    if (index > length) return false;
+
+    if (index = 0) {
+      newNode.next = currentNode;
+      this.head = newNode;
+    } else {
+      while (currentIndex < index) {
+        currentIndex++;
+        prevNode = currentNode.next;
+        currentNode = currentNode.next
+      }
+      newNode.next = currentNode;
+      prevNode.next = newNode;
+    }
+    this.length++;
+  }
+
+  removeAt(index) {
+    let currentNode = this.head;
+    let prevNode;
+    let currentIndex = 0;
+
+    if (index < 0 || index > length) return false;
+
+    if (index = 0) {
+      this.head = currentNode.next;
+    } else {
+      while (currentIndex < index) {
+        currentIndex++;
+        prevNode = currentNode.next;
+        currentNode = currentNode.next;
+      }
+      prevNode.next = currentNode.next
+    }
+    this.length--;
+    return currentNode.value;
+  }
+
 }
 
 let newList = new SinglyLinkedList();
